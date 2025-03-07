@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elenco - Flamengo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        function filtrarPosicao(posicao) {
+            let jogadores = document.querySelectorAll('.jogador');
+            jogadores.forEach(jogador => {
+                if (posicao === 'todos' || jogador.dataset.posicao === posicao) {
+                    jogador.style.display = 'block';
+                } else {
+                    jogador.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</head>
+<body class="bg-gray-100 flex flex-col min-h-screen">
+    <header class="bg-red-600 text-white py-4 text-center text-2xl font-bold">
+        Flamengo - Elenco 2025
+    </header>
+    <nav class="bg-gray-800 text-white py-2 flex justify-center space-x-6">
+        <button class="bg-red-500 px-4 py-2 rounded" onclick="filtrarPosicao('todos')">Todos</button>
+        <button class="bg-gray-700 px-4 py-2 rounded" onclick="filtrarPosicao('Goleiro')">Goleiros</button>
+        <button class="bg-gray-700 px-4 py-2 rounded" onclick="filtrarPosicao('Zagueiro')">Zagueiros</button>
+        <button class="bg-gray-700 px-4 py-2 rounded" onclick="filtrarPosicao('Meia')">Meias</button>
+        <button class="bg-gray-700 px-4 py-2 rounded" onclick="filtrarPosicao('Atacante')">Atacantes</button>
+    </nav>
+    <main class="max-w-6xl mx-auto mt-6 p-4 flex-grow">
+        <section class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+            <div class="jogador bg-white rounded-lg shadow-md p-4 text-center hover:scale-105 transition-transform duration-200" data-posicao="Atacante">
+                <img src="https://images.flamengo.com.br/public/images/players/7/1738349094.png" alt="Luiz Araujo 7" class="rounded-lg mx-auto w-212 h-257 object-cover">
+                <h2 class="text-lg font-semibold mt-2">Luiz Araujo 7</h2>
+                <p class="text-gray-600">Atacante</p>
+            </div>
+
+<div class="jogador bg-white rounded-lg shadow-md p-4 text-center hover:scale-105 transition-transform duration-200" data-posicao="Atacante">
+                <img src="https://images.flamengo.com.br/public/images/players/7/1738349124.png" alt="G.Plata 50" class="rounded-lg mx-auto w-212 h-257 object-cover">
+                <h2 class="text-lg font-semibold mt-2">G.Plata 50</h2>
+                <p class="text-gray-600">Atacante</p>
+            </div>
+
+            <div class="jogador bg-white rounded-lg shadow-md p-4 text-center hover:scale-105 transition-transform duration-200" data-posicao="Meia">
+                <img src="https://images.flamengo.com.br/public/images/players/6/1738348852.png" alt="Arrascaeta 10" class="rounded-lg mx-auto w-212 h-257 object-cover">
+                <h2 class="text-lg font-semibold mt-2">Arrascaeta 10</h2>
+                <p class="text-gray-600">Meia</p>
+            </div>
+
+        </section>
+    </main>
+    <footer class="bg-gray-800 text-white text-center py-4 mt-auto">
+        &copy; 2025 Notícias Rubro Negras - Todos os direitos reservados
+    </footer>
+</body>
+</html>
